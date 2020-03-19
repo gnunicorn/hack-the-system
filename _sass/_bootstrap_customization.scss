@@ -7,23 +7,34 @@
 
 // Variables ===================================================================
 
-$web-font-path: "https://fonts.googleapis.com/css?family=Montserrat" !default;
+$web-font-path: "https://fonts.googleapis.com/css?family=Rubik" !default;
 @import url($web-font-path);
 
+body {
+  background: $body-background;
+}
+
 // Navbar ======================================================================
+
+.article aside {
+  background: white;
+  border: 1px solid $gray-200;
+}
 
 .navbar {
   font-family: $headings-font-family;
 }
 
-.bg-dark {
-  background-color: $secondary !important;
+.navbar-light a.navbar-brand {
+  text-transform: uppercase;
+  color: $primary;
+  font-family: $headings-font-family;
+  font-weight: 900;
 }
 
-.border-dark {
-  border-color: $secondary !important;
+.navbar-light .navbar-nav a.nav-link:hover {
+  color: $primary;
 }
-
 // Buttons =====================================================================
 
 .btn {

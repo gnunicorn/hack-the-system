@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container">
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
     <a class="navbar-brand" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
 
     {%- assign page_paths = site.header_pages -%}
@@ -18,7 +18,7 @@
           {%- endif -%}
         {% endfor -%}
         <li class="nav-item">
-          <a class="nav-link" href="{{ site.github.repository_url }}">Fork me on Github</a>
+          <a class="btn btn-outline-primary" href="{{ site.github.repository_url }}">Mitmachen</a>
         </li>
       </ul>
     </div>

@@ -1,0 +1,33 @@
+<ul class="nav flex-column">
+    {% for p in include.pages %}
+    {% assign pages_id = p.title|slugify:"ascii" %}
+
+    <li class="nav-item">
+        <span class="text-muted"
+            {% if p.pages %}
+                data-toggle="collapse"
+                data-target="#{{pages_id}}"
+                aria-expanded="false"
+                aria-controls="{{pages_id}}"
+            {% endif %}
+        >
+            {% if p.url %}
+                <a class="text-muted text-underline"
+                    href="{{site.base_url}}{{p.url}}">
+                    {{p.title}}
+                </a>
+            {% else %}
+                {{p.title}}
+            {% endif %}
+            {% if p.pages %}
+                <div
+                    id="{{pages_id}}"
+                    class="px-3 collapse {%if page.url == p.url %}show{%endif%}"
+                >
+                    {% include docs_menu.html pages=p.pages %}
+                </div>
+            {% endif %}
+        </span>
+    </li>
+    {% endfor %}
+</ul>

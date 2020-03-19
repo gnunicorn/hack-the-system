@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+
+<div class="container-fluid article">
+    <div class="row">
+        <aside class="col-md-4">
+            {% include docs_menu.html pages=site.docs %}
+        </aside>
+        <article class="col">
+            <header>
+                <h1>{{ page.title | escape }}</h1>
+            </header>
+            <section>
+                {{ content }}
+            </section>
+
+        </article>
+    </div>
+</div>
