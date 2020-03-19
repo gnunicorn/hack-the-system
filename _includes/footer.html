@@ -1,40 +1,39 @@
+<footer>
+<section class="py-5 bg-primary">
+  <div class="container text-center">
+    <h2 class="text-light">Zeit die Welt zu verändern</h2>
+    <p class="text-light">Tritt der wachsenden Community von Aktivisti bei und vernetze Dich</p>
+    <button class="my-3 btn btn-lg btn-light text-primary">Jetzt mitmachen</button>
+  </div>
+
+</section>
 
 <div class="py-5 border-top">
   <div class="container">
-
-    <p class="h5 mb-3">{{ site.title | escape }}</p>
-
     <div class="row">
+      <div class="ml-auto">
+        <p class="h5 mb-3">{{ site.title | escape }}</p>
 
-      <div class="col-sm">
-        <ul class="list-unstyled">
-          <li>
-            {%- if site.author -%}
-              {{ site.author | escape }}
-            {%- else -%}
-              {{ site.title | escape }}
-            {%- endif -%}
-          </li>
-          {%- if site.email -%}
-            <li>
-              <a href="mailto:{{ site.email }}">
-                {{ site.email }}
-              </a>
+        <ul class="px-2 navbar-nav">
+          {%- for path in page_paths -%}
+            {%- assign my_page = site.pages | where: "path", path | first -%}
+            {%- if my_page.title -%}
+            <li class="nav-item p-0">
+              <a class="nav-link text-muted  p-0" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
             </li>
-          {%- endif -%}
+            {%- endif -%}
+          {% endfor -%}
         </ul>
+
       </div>
 
-
       <div class="col-sm text-right">
-        <p>{{- site.description | escape -}}</p>
-
-        <p>
-          <a href="https://nicolas-van.github.io/bootstrap-4-github-pages/">Powered by Bootstrap 4 Github Pages</a>
-        </p>
+        © 2020 HTS
       </div>
 
     </div>
 
   </div>
 </div>
+
+</footer>
